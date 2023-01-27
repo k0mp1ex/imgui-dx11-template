@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.24)
+
+project(ImGuiDx11Template VERSION 0.0.1 LANGUAGES CXX)
+
+add_executable(${PROJECT_NAME} src/main.cpp)
+
+target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_23)
+
+find_package(imgui CONFIG REQUIRED)
+target_link_libraries(${PROJECT_NAME} PRIVATE imgui::imgui d3d11.lib)
