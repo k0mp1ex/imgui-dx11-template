@@ -5,6 +5,7 @@ project(ImGuiDx11Template VERSION 0.0.1 LANGUAGES CXX)
 add_executable(${PROJECT_NAME} src/main.cpp)
 
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_23)
+target_link_options(${PROJECT_NAME} PRIVATE "/SUBSYSTEM:WINDOWS" "/ENTRY:mainCRTStartup")
 
 find_package(imgui CONFIG REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE imgui::imgui d3d11.lib)
